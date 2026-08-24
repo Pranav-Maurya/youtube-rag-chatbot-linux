@@ -11,11 +11,12 @@ def extract_video_id(url_or_id: str) -> str:
 
     parsed = urlparse(value)
     host = parsed.netloc.lower()
+    allowed_youtube_hosts = {"youtube.com", "www.youtube.com", "m.youtube.com"}
 
     if host in {"youtu.be", "www.youtu.be"}:
         return parsed.path.lstrip("/").split("/")[0]
 
-    if "youtube.com" in host:
+    if host in allowed_youtube_hosts:
         if parsed.path == "/watch":
             query = parse_qs(parsed.query)
             if "v" in query and query["v"]:
