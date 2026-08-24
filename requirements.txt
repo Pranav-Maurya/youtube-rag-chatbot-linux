@@ -1,0 +1,11 @@
+youtube-transcript-api
+langchain
+langchain-core
+langchain-text-splitters
+langchain-cohere
+langchain-chroma
+chromadb
+cohere
+python-dotenv
+jupyter
+ipykernel
